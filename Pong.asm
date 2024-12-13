@@ -17,14 +17,16 @@ segment code
    		MOV     	AH,0
     	INT     	10h
 		
+
+	;problema sendo causado por estar usando CALL NEAR, procurar como usar CALL FAR
 ;Desenhar Retas do campo
 		;reta superior
 		MOV		byte[cor],branco_intenso	;antenas
-		MOV		AX,20	;inicio da posicao horizontal
+		MOV		AX,40	;inicio da posicao horizontal
 		PUSH	AX
 		MOV		AX,400 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,620	;fim da posicao vertical
+		MOV		AX,600	;fim da posicao vertical
 		PUSH	AX
 		MOV		AX,400 ; fim da posicao vertical
 		PUSH	AX
@@ -32,7 +34,474 @@ segment code
 
 		;reta inferior
 		MOV		byte[cor],branco_intenso	;antenas
+		MOV		AX,40	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,40 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,600	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,40 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;Retangulo 1 da esquerda
+		;reta superior do retangulo
+		MOV		byte[cor],vermelho	;antenas
 		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,400 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,400 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],vermelho	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,332 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,332 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],vermelho	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,400 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,20	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,332 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],vermelho	;antenas
+		MOV		AX,30	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,400 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,332 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;retanglo 2 da esquerda
+		;reta superior do retangulo
+		MOV		byte[cor],amarelo	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,327 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,327 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],amarelo	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,259 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,259 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],amarelo	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,327 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,20	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,259 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],amarelo	;antenas
+		MOV		AX,30	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,327 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,259 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;retangulo 3 da esquerda
+		;reta superior do retangulo
+		MOV		byte[cor],verde_claro	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,254 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,254 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],verde_claro	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,186 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,186 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],verde_claro	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,254 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,20	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,186 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],verde_claro	;antenas
+		MOV		AX,30	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,254 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,186 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;retangulo 4 da esquerda
+		;reta superior do retangulo
+		MOV		byte[cor],azul_claro	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,181 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,181 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],azul_claro	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,113 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,113 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],azul_claro	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,181 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,20	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,113 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],azul_claro	;antenas
+		MOV		AX,30	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,181 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,113 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;retangulo 5 da esquerda
+		;reta superior do retangulo
+		MOV		byte[cor],azul	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,108 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,108 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],azul	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,40 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,40 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],azul	;antenas
+		MOV		AX,20	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,108 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,20	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,40 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],azul	;antenas
+		MOV		AX,30	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,108 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,30	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,40 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+
+;retangulo 1 da direita
+		;reta superior do retangulo
+		MOV		byte[cor],vermelho	;antenas
+		MOV		AX,620	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,400 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,610	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,400 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],vermelho	;antenas
+		MOV		AX,620	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,332 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,610	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,332 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],vermelho	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,400 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,610	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,332 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],vermelho	;antenas
+		MOV		AX,620	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,400 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,332 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;retangulo 2 da direita
+		;reta superior do retangulo
+		MOV		byte[cor],amarelo	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,327 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,327 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],amarelo	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,259 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,259 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],amarelo	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,327 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,610	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,259 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],amarelo	;antenas
+		MOV		AX,620	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,327 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,259 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;retangulo 3 da drieita
+		;reta superior do retangulo
+		MOV		byte[cor],verde_claro	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,254 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,254 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],verde_claro	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,186 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,186 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],verde_claro	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,254 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,610	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,186 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],verde_claro	;antenas
+		MOV		AX,620	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,254 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,186 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;retangulo 4 da direita
+		;reta superior do retangulo
+		MOV		byte[cor],azul_claro	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,181 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,181 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],azul_claro	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,113 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,113 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da esquerda do retangulo
+		MOV		byte[cor],azul_claro	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,181 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,610	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,113 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta da direita do retangulo
+		MOV		byte[cor],azul_claro	;antenas
+		MOV		AX,620	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,181 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,113 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+;retangulo 5 da direita
+		;reta superior do retangulo
+		MOV		byte[cor],azul	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
+		PUSH	AX
+		MOV		AX,108 ;inicio da posicao vertical
+		PUSH	AX
+		MOV		AX,620	;fim da posicao vertical
+		PUSH	AX
+		MOV		AX,108 ; fim da posicao vertical
+		PUSH	AX
+		CALL	line
+
+		;reta inferio do retangulo
+		MOV		byte[cor],azul	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
 		PUSH	AX
 		MOV		AX,40 ;inicio da posicao vertical
 		PUSH	AX
@@ -42,50 +511,50 @@ segment code
 		PUSH	AX
 		CALL	line
 
-		;reta da esquerda 
-		MOV		byte[cor],branco_intenso	;antenas
-		MOV		AX,20	;inicio da posicao horizontal
+		;reta da esquerda do retangulo
+		MOV		byte[cor],azul	;antenas
+		MOV		AX,610	;inicio da posicao horizontal
 		PUSH	AX
-		MOV		AX,40 ;inicio da posicao vertical
+		MOV		AX,108 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,20	;fim da posicao vertical
+		MOV		AX,610	;fim da posicao vertical
 		PUSH	AX
-		MOV		AX,400 ; fim da posicao vertical
+		MOV		AX,40 ; fim da posicao vertical
 		PUSH	AX
 		CALL	line
 
-		;reta da direita 
-		MOV		byte[cor],branco_intenso	;antenas
+		;reta da direita do retangulo
+		MOV		byte[cor],azul	;antenas
 		MOV		AX,620	;inicio da posicao horizontal
 		PUSH	AX
-		MOV		AX,40 ;inicio da posicao vertical
+		MOV		AX,108 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,620	;fim da posicao vertical
+		MOV		AX,0	;fim da posicao vertical
 		PUSH	AX
-		MOV		AX,400 ; fim da posicao vertical
+		MOV		AX,40 ; fim da posicao vertical
 		PUSH	AX
 		CALL	line
 
 ;desenhar retas da raquete da esquerda 
 		;reta superior
 		MOV		byte[cor],verde	;antenas
-		MOV		AX,30	;inicio da posicao horizontal
+		MOV		AX,40	;inicio da posicao horizontal
 		PUSH	AX
-		MOV		AX,220 ;inicio da posicao vertical
+		MOV		AX,248 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,50	;fim da posicao vertical
+		MOV		AX,60	;fim da posicao horizontal
 		PUSH	AX
-		MOV		AX,220 ; fim da posicao vertical
+		MOV		AX,248 ; fim da posicao vertical
 		PUSH	AX
 		CALL	line
 
 		;reta inferior 
 		MOV		byte[cor],verde	;antenas
-		MOV		AX,30	;inicio da posicao horizontal
+		MOV		AX,40	;inicio da posicao horizontal
 		PUSH	AX
 		MOV		AX,180 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,50	;fim da posicao vertical
+		MOV		AX,60	;fim da posicao horizontal
 		PUSH	AX
 		MOV		AX,180 ; fim da posicao vertical
 		PUSH	AX
@@ -93,25 +562,25 @@ segment code
 
 		;reta esquerda 
 		MOV		byte[cor],verde	;antenas
-		MOV		AX,30	;inicio da posicao horizontal
+		MOV		AX,40	;inicio da posicao horizontal
 		PUSH	AX
 		MOV		AX,180 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,30	;fim da posicao vertical
+		MOV		AX,40	;fim da posicao horizontal
 		PUSH	AX
-		MOV		AX,220 ; fim da posicao vertical
+		MOV		AX,248 ; fim da posicao vertical
 		PUSH	AX
 		CALL	line
 
 		;reta direita 
 		MOV		byte[cor],verde	;antenas
-		MOV		AX,50	;inicio da posicao horizontal
+		MOV		AX,60	;inicio da posicao horizontal
 		PUSH	AX
 		MOV		AX,180 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,50	;fim da posicao vertical
+		MOV		AX,60	;fim da posicao horizontal
 		PUSH	AX
-		MOV		AX,220 ; fim da posicao vertical
+		MOV		AX,248 ; fim da posicao vertical
 		PUSH	AX
 		CALL	line
 
@@ -119,23 +588,23 @@ segment code
 ;desenhar retas da raquete da direita 
 		;reta superior
 		MOV		byte[cor],verde	;antenas
-		MOV		AX,610	;inicio da posicao horizontal
+		MOV		AX,600	;inicio da posicao horizontal
 		PUSH	AX
-		MOV		AX,220 ;inicio da posicao vertical
+		MOV		AX,248 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,590	;fim da posicao vertical
+		MOV		AX,580	;fim da posicao horizontal
 		PUSH	AX
-		MOV		AX,220 ; fim da posicao vertical
+		MOV		AX,248 ; fim da posicao vertical
 		PUSH	AX
 		CALL	line
 
 		;reta inferior 
 		MOV		byte[cor],verde	;antenas
-		MOV		AX,610	;inicio da posicao horizontal
+		MOV		AX,600	;inicio da posicao horizontal
 		PUSH	AX
 		MOV		AX,180 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,590	;fim da posicao vertical
+		MOV		AX,580	;fim da posicao horizontal
 		PUSH	AX
 		MOV		AX,180 ; fim da posicao vertical
 		PUSH	AX
@@ -143,25 +612,25 @@ segment code
 
 		;reta esquerda 
 		MOV		byte[cor],verde	;antenas
-		MOV		AX,610	;inicio da posicao horizontal
+		MOV		AX,600	;inicio da posicao horizontal
 		PUSH	AX
 		MOV		AX,180 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,610	;fim da posicao vertical
+		MOV		AX,600	;fim da posicao horizontal
 		PUSH	AX
-		MOV		AX,220 ; fim da posicao vertical
+		MOV		AX,248 ; fim da posicao vertical
 		PUSH	AX
 		CALL	line
 
 		;reta direita 
 		MOV		byte[cor],verde	;antenas
-		MOV		AX,590	;inicio da posicao horizontal
+		MOV		AX,580	;inicio da posicao horizontal
 		PUSH	AX
 		MOV		AX,180 ;inicio da posicao vertical
 		PUSH	AX
-		MOV		AX,590	;fim da posicao vertical
+		MOV		AX,580	;fim da posicao horizontal
 		PUSH	AX
-		MOV		AX,220 ; fim da posicao vertical
+		MOV		AX,248 ; fim da posicao vertical
 		PUSH	AX
 		CALL	line
 
@@ -174,6 +643,10 @@ segment code
 		MOV		AX,20	;tam do raio
 		PUSH	AX
 		CALL	full_circle
+
+;para a animacao da bola andando sempre em um angulo de 45 graus sera usado sempre a ideia de acresimo ou decresimo de uma unidade
+;das coordenadas x e y, por exemplo para ir para cima e direita adiciona 1 em x e y, para baixo e para direita adiciona um em x 
+;e decresce 1 em y, para esquerda e pra cima decresce 1 de x e acrescenta 1 em y e para esquerda e baixo decresce 1 de x e y
 
 ;-----------------------------------------------------------------------------
 ;função plot_xy
